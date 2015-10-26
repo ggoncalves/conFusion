@@ -31,17 +31,17 @@
         <!-- 
         In the code below, we can see the use of the nav element to specify the navigation information for the website. This nav element is styled by the navbar that declares it as a navigation bar, and the navbar-inverse class to specify that the page should use the dark navigation bar. In addition the inner ul is used to specify the items to be put in the navigation bar. This ul is styled with nav and navbar-nav classes to specify that the items should be displayed inline inside the navigation bar. We also use the container class inside the navigation bar. This navigation bar does not use responsive design at the moment.
         -->
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-            <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
-            </div>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
+                <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
+                </div>
             <!--
             To hide the items from the navigation bar for smaller screens, we need to enclose the ul within another navigation bar as follows:
             -->
@@ -49,7 +49,8 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#"><span class="glyphicon glyphicon-home"
                          aria-hidden="true"></span> Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="aboutus.html"><span class="glyphicon glyphicon-info-sign"
+                         aria-hidden="true"></span> About</a></li>
                     <!-- Menu class as a dropdown style. -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -66,7 +67,7 @@
                             <li><a href="#">Weekend Brunch</a></li>
                         </ul>
                      </li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#footer">Contact</a></li>
                 </ul>
             </div>
             </div>
@@ -126,7 +127,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="row-footer" id="footer">
         <div class="container">
             <div class="row row-footer">             
                 <!--div class="col-xs-6 col-sm-3" -->
@@ -135,9 +136,9 @@
                     <ul class="list-unstyled">
                     	<div>
 	                        <li><a href="#">Home</a></li>
-	                        <li><a href="#">About</a></li>
+	                        <li><a href="aboutus.html">About</a></li>
 	                        <li><a href="#">Menu</a></li>
-	                        <li><a href="#">Contact</a></li>
+	                        <li><a href="#footer">Contact</a></li>
                         </div>
                     </ul>
                 </div>
