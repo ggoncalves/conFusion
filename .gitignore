@@ -1,6 +1,10 @@
 .DS_Store
 bower_components/
 
+# Distribution and temporary folders
+.tmp/
+dist/
+
 # Logs
 logs
 *.log
