@@ -1,33 +1,85 @@
-
-    <div class="container" ng-controller="IndexController">
-        <div class="row row-content">
-            <div class="col-xs-12 col-sm-3 col-sm-push-9">
-                <p style="padding:20px;"></p>
-                <h3 align=center>Our Lipsmacking Culinary Creations</h3>
-            </div>
-            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-				<h4>Implement the Featured Dish Here</h4>
-            </div>
+<div class="container" ng-controller="IndexController">
+    <div class="row row-content">
+        <div class="col-xs-12 col-sm-3 col-sm-push-9">
+            <p style="padding:20px;"></p>
+            <h3 align=center>Our Lipsmacking Culinary Creations</h3>
         </div>
+        <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+            <!-- <h4>Implement the Featured Dish Here</h4> -->
 
+            <div class="media">
+                <div class="media-left media-middle">
+                    <!-- <a href="#"> -->
+                        <img class="media-object img-thumbnail" src="{{featuredish.image}}" alt="Uthappizza">
+                    <!-- </a> -->
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">{{featuredish.name}}
+                        <span class="label label-danger">{{featuredish.label}}</span>
+                        <span class="badge">{{featuredish.price}}</span>
+                    </h2>
+                    <p>{{featuredish.description}}</p>
+                    <!-- <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p> -->
+                </div>
+            </div>
 
-        <div class="row row-content">
-            <div class="col-xs-12 col-sm-3">
-                <p style="padding:20px;"></p>
-                <h3 align=center>This Month's Promotions</h3>
-            </div>
-            <div class="col-xs-12 col-sm-9">
-				<h4>Implement the Promotion Here</h4>
-            </div>
-        </div>
-
-        <div class="row row-content">
-            <div class="col-xs-12 col-sm-3 col-sm-push-9">
-                <p style="padding:20px;"></p>
-                <h3 align=center>Meet our Culinary Specialists</h3>
-            </div>
-            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-				<h4>Implement the Executive Chef Info Here</h4>
-            </div>
         </div>
     </div>
+
+
+
+
+    <div class="row row-content">
+        <div class="col-xs-12 col-sm-3">
+            <p style="padding:20px;"></p>
+            <h3 align=center>This Month's Promotions</h3>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <!-- <h4>Implement the Promotion Here</h4> -->
+
+            <div class="media">
+                <div class="media-body">
+                    <h2 class="media-heading">{{featurepromo.name}}
+                        <span class="label label-danger">{{featurepromo.label}}</span>
+                        <span class="badge">{{featurepromo.price}}</span>
+                    </h2>
+                    <p>{{featurepromo.description}}</p>
+                    <!-- <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p> -->
+                </div>
+                <div class="media-right media-middle">
+                    <!-- <a href="#"> -->
+                        <img class="media-object img-thumbnail" src="{{featurepromo.image}}" alt="Promotion">
+                    <!-- </a> -->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row row-content">
+        <div class="col-xs-12 col-sm-3 col-sm-push-9">
+            <p style="padding:20px;"></p>
+            <h3 align=center>Meet our Culinary Specialists</h3>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+            <!-- <h4>Implement the Executive Chef Info Here</h4> -->
+
+            <div class="media">
+                <div class="media-left media-middle">
+
+                    <img class="media-object img-thumbnail" ng-src={{featureexecute.image}} alt="Executive">
+
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">{{featureexecute.name}}
+                        <span class="small text-muted">{{featureexecute.designation}}</span>
+                        <span class="small text-muted">{{featureexecute.abbr}}</span>
+                    </h3>
+                    <p>{{featureexecute.description}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
