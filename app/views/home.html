@@ -5,12 +5,16 @@
             <h3 align=center>Our Lipsmacking Culinary Creations</h3>
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-            <!-- <h4>Implement the Featured Dish Here</h4> -->
 
-            <div class="media">
+            <div ng-if="!showDish">
+                <h3>{{message}}</h3>
+            </div>
+
+            <!-- <h4>Implement the Featured Dish Here</h4> -->
+            <div class="media" ng-if="showDish">
                 <div class="media-left media-middle">
                     <!-- <a href="#"> -->
-                        <img class="media-object img-thumbnail" src="{{featuredish.image}}" alt="Uthappizza">
+                    <img class="media-object img-thumbnail" src="{{featuredish.image}}" alt="Uthappizza">
                     <!-- </a> -->
                 </div>
                 <div class="media-body">
@@ -48,7 +52,7 @@
                 </div>
                 <div class="media-right media-middle">
                     <!-- <a href="#"> -->
-                        <img class="media-object img-thumbnail" src="{{featurepromo.image}}" alt="Promotion">
+                    <img class="media-object img-thumbnail" src="{{featurepromo.image}}" alt="Promotion">
                     <!-- </a> -->
                 </div>
 
