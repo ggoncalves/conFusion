@@ -71,10 +71,10 @@
                     <ul class="list-unstyled">
                         <li>
                             <blockquote ng-show="commentForm.$valid && commentForm.$dirty">
-                                <p>{{comment.rating}} Stars</p>
-                                <p>{{comment.comment}}</p>
+                                <p>{{mycomment.rating}} Stars</p>
+                                <p>{{mycomment.comment}}</p>
                                 <footer>
-                                    {{comment.author}}, {{comment.date | date:'MMM. d, y'}}
+                                    {{mycomment.author}}, {{mycomment.date | date:'MMM. d, y'}}
                                 </footer>
                             </blockquote>
                         </li>
@@ -90,7 +90,7 @@
                     <div class="form-group" ng-class="{ 'has-error' : commentForm.clientname.$error.required && !commentForm.clientname.$pristine }">
                         <label class="control-label col-sm-2" for="clientname">Your Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="clientname" name="clientname" ng-model="comment.author" required>
+                            <input type="text" class="form-control" id="clientname" name="clientname" ng-model="mycomment.author" required>
                             <span ng-show="commentForm.clientname.$error.required && commentForm.clientname.$dirty" class="help-block">Your Name is required.</span>
                         </div>
                     </div>
@@ -100,15 +100,15 @@
                         <label class="control-label col-sm-2" for="stars">Number of Stars</label>
                         <div class="col-sm-10">
                             <label id="stars" class="radio-inline">
-                                <input type="radio" ng-model="comment.rating" value="1" name="optstar">1</label>
+                                <input type="radio" ng-model="mycomment.rating" value="1" name="optstar">1</label>
                             <label class="radio-inline">
-                                <input type="radio" ng-model="comment.rating" value="2" name="optstar">2</label>
+                                <input type="radio" ng-model="mycomment.rating" value="2" name="optstar">2</label>
                             <label class="radio-inline">
-                                <input type="radio" ng-model="comment.rating" value="3" name="optstar">3</label>
+                                <input type="radio" ng-model="mycomment.rating" value="3" name="optstar">3</label>
                             <label class="radio-inline">
-                                <input type="radio" ng-model="comment.rating" value="4" name="optstar">4</label>
+                                <input type="radio" ng-model="mycomment.rating" value="4" name="optstar">4</label>
                             <label class="radio-inline">
-                                <input type="radio" ng-model="comment.rating" value="5" name="optstar">5</label>
+                                <input type="radio" ng-model="mycomment.rating" value="5" name="optstar">5</label>
                         </div>
                     </div>
 
@@ -116,7 +116,7 @@
                     <div class="form-group" ng-class="{ 'has-error' : commentForm.clientcomments.$error.required && commentForm.clientcomments.$dirty }">
                         <label class="control-label col-sm-2" for="clientcomments">Your Comments</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" rows="5" id="clientcomments" name="clientcomments" ng-model="comment.comment" required></textarea>
+                            <textarea class="form-control" rows="5" id="clientcomments" name="clientcomments" ng-model="mycomment.comment" required></textarea>
                             <span ng-show="commentForm.clientcomments.$error.required && !commentForm.clientcomments.$pristine" class="help-block">Comments text is required.</span>
                         </div>
                     </div>
