@@ -7,24 +7,10 @@ angular.module('confusionApp')
             $scope.tab = 1;
             $scope.filtText = '';
             $scope.showDetails = false;
-            $scope.showMenu = false;
+            $scope.showMenu = true;
             $scope.message = "Loading ...";
 
-            $scope.dishes= {};
-
-            menuFactory.getDishes()
-            .then(
-                // handle success.
-                function(response) {
-                    $scope.dishes = response.data;
-                    $scope.showMenu = true;
-                },
-                // handle error.
-                function(response) {
-                    $scope.showMenu = false;
-                    $scope.message = "Error: "+response.status + " " + response.statusText;
-                }
-            );
+            $scope.dishes = menuFactory.getDishes().query();
 
             $scope.select = function(setTab) {
                 $scope.tab = setTab;
@@ -85,23 +71,10 @@ angular.module('confusionApp')
 
         .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
 
-            $scope.dish= {};
-            $scope.showDish = false;
+            $scope.showDish = true;
             $scope.message = "Loading ...";
 
-            menuFactory.getDish(parseInt($stateParams.id,10))
-            .then(
-                // Handle success.
-                function(response) {
-                    $scope.dish = response.data;
-                    $scope.showDish=true;
-                },
-                // Handle error.
-                function(response) {
-                    $scope.showDish = false;
-                    $scope.message = "Error: "+response.status + " " + response.statusText;
-                }
-            );
+            $scope.dish = menuFactory.getDishes().get({id:parseInt($stateParams.id,10)});
 
         }])
 
@@ -125,23 +98,10 @@ angular.module('confusionApp')
         // implement the IndexController and About Controller here
         .controller('IndexController', ['$scope', 'corporateFactory', 'menuFactory', function($scope, corporateFactory, menuFactory) {
 
-            $scope.featuredish = {};
-            $scope.showDish = false;
+            $scope.showDish = true;
             $scope.message = "Loading ...";
 
-            menuFactory.getDish(0)
-            .then(
-                // Handle success.
-                function(response) {
-                    $scope.featuredish = response.data;
-                    $scope.showDish = true;
-                },
-                // Handle error.
-                function(response) {
-                    $scope.showDish = false;
-                    $scope.message = "Error: "+response.status + " " + response.statusText;
-                }
-            );
+            $scope.featuredish = menuFactory.getDishes().get({id:0});
 
             $scope.featurepromo = menuFactory.getPromotion(0);
 
