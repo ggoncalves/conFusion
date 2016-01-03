@@ -1,0 +1,2 @@
+- Include how to run tests under Karma;
+- Include how to run tests under Procractor;
