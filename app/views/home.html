@@ -39,9 +39,14 @@
             <h3 align=center>This Month's Promotions</h3>
         </div>
         <div class="col-xs-12 col-sm-9">
+
+            <div ng-if="!showPromotion">
+                <h3>{{message}}</h3>
+            </div>
+
             <!-- <h4>Implement the Promotion Here</h4> -->
 
-            <div class="media">
+            <div class="media" ng-if="showPromotion">
                 <div class="media-body">
                     <h2 class="media-heading">{{featurepromo.name}}
                         <span class="label label-danger">{{featurepromo.label}}</span>
@@ -67,9 +72,14 @@
             <h3 align=center>Meet our Culinary Specialists</h3>
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+
+            <div ng-if="!showLeader">
+                <h3>{{message}}</h3>
+            </div>
+
             <!-- <h4>Implement the Executive Chef Info Here</h4> -->
 
-            <div class="media">
+            <div class="media" ng-if="showLeader">
                 <div class="media-left media-middle">
 
                     <img class="media-object img-thumbnail" ng-src={{featureexecute.image}} alt="Executive">
